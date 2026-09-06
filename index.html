@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Eames | Computer Science Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #0b1120, #111827);
+    }
+
+    .hero {
+      max-width: 850px;
+    }
+
+    .tag {
+      color: #38bdf8;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: auto;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    nav {
+      background: #111827;
+      padding: 18px;
+      text-align: center;
+      border-top: 1px solid #1f2937;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 25px;
+      border: 1px solid #1f2937;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #94a3b8;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 15px;
+      color: #38bdf8;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1f2937;
+      color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+    <div class="tag">Computer Science • Cybersecurity • Software Development</div>
+
+    <h1>Ryan Eames</h1>
+
+    <p class="subtitle">
+      Computer Science ePortfolio
+    </p>
+
+    <p class="intro">
+      Welcome to my professional ePortfolio. This portfolio represents my
+      growth throughout the Computer Science program and demonstrates my
+      experience in software engineering, algorithms and data structures,
+      databases, and secure software development.
+    </p>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Enhancements</a>
+  <a href="#code-review">Code Review</a>
+  <a href="#assessment">Professional Self-Assessment</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+
+  <p>
+    My work in computer science has given me experience designing,
+    developing, testing, and improving software across multiple platforms.
+    My professional interests are increasingly focused on cybersecurity,
+    information technology, and developing secure computing solutions that
+    help organizations protect their systems, data, and resources.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Artifact Enhancements</h2>
+
+  <p>
+    My capstone demonstrates growth across three major areas of computer
+    science through the enhancement of a previous software artifact.
+  </p>
+
+  <div class="card-container">
+
+    <div class="card">
+      <h3>Software Engineering & Design</h3>
+      <p>
+        Enhancement of an existing application through improved architecture,
+        security-focused functionality, usability, and professional software
+        engineering practices.
+      </p>
+      <span class="coming-soon">Enhancement in Progress</span>
+    </div>
+
+    <div class="card">
+      <h3>Algorithms & Data Structures</h3>
+      <p>
+        Implementation of advanced algorithmic logic and data structures to
+        analyze information, evaluate risk, and support intelligent
+        decision-making.
+      </p>
+      <span class="coming-soon">Enhancement in Progress</span>
+    </div>
+
+    <div class="card">
+      <h3>Databases</h3>
+      <p>
+        Expansion of the application's data architecture to support more
+        complex, secure, and meaningful relationships between stored data.
+      </p>
+      <span class="coming-soon">Enhancement in Progress</span>
+    </div>
+
+  </div>
+</section>
+
+<section id="code-review">
+  <h2>Code Review</h2>
+
+  <p>
+    This section will contain my capstone code review, including an analysis
+    of the original artifact, areas identified for improvement, and the
+    enhancements planned throughout the project.
+  </p>
+</section>
+
+<section id="assessment">
+  <h2>Professional Self-Assessment</h2>
+
+  <p>
+    My professional self-assessment will reflect on my development throughout
+    the Computer Science program and demonstrate how my technical,
+    communication, problem-solving, database, software engineering, and
+    security skills have prepared me for the next stage of my career.
+  </p>
+</section>
+
+<footer>
+  <p>Ryan Eames | Computer Science ePortfolio | 2026</p>
+</footer>
+
+</body>
+</html>
