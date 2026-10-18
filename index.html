@@ -1,36 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryan Eames | Computer Science Portfolio</title>
+  <meta name="description" content="Ryan Eames Computer Science and Cybersecurity ePortfolio featuring the Sentinel Android security asset management project.">
+  <title>Ryan Eames | Computer Science ePortfolio</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #0b1120;
       color: #e5e7eb;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     header {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 100px 24px 85px;
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #0b1120, #111827);
+      background: linear-gradient(135deg, #0b1120, #172b46);
+      border-bottom: 1px solid #334155;
     }
 
     .hero {
       max-width: 850px;
+      margin: auto;
     }
 
     .tag {
@@ -38,105 +41,164 @@
       font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      font-size: 13px;
     }
 
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 12px 0;
       color: #ffffff;
     }
 
     .subtitle {
-      font-size: 1.4rem;
       color: #94a3b8;
+      font-size: 1.25rem;
       margin-bottom: 25px;
     }
 
     .intro {
-      max-width: 700px;
-      margin: auto;
       color: #cbd5e1;
-      font-size: 1.05rem;
+      max-width: 750px;
+      margin: auto;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       background: #111827;
-      padding: 18px;
+      border-bottom: 1px solid #334155;
+      padding: 16px;
       text-align: center;
-      border-top: 1px solid #1f2937;
-      border-bottom: 1px solid #1f2937;
     }
 
     nav a {
+      display: inline-block;
       color: #e5e7eb;
       text-decoration: none;
-      margin: 0 18px;
+      margin: 5px 15px;
+      font-size: 14px;
       font-weight: bold;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       color: #38bdf8;
     }
 
     section {
-      max-width: 1000px;
+      max-width: 1050px;
       margin: auto;
       padding: 70px 25px;
+      scroll-margin-top: 85px;
     }
 
     h2 {
       color: #38bdf8;
-      margin-bottom: 20px;
       font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #ffffff;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: #94a3b8;
+      margin-bottom: 30px;
     }
 
     .card-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
 
     .card {
       background: #111827;
-      padding: 25px;
-      border: 1px solid #1f2937;
-      border-radius: 10px;
-    }
-
-    .card h3 {
-      color: #ffffff;
-      margin-bottom: 10px;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 26px;
     }
 
     .card p {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
-    .coming-soon {
-      display: inline-block;
-      margin-top: 15px;
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+    }
+
+    .label {
       color: #38bdf8;
-      font-size: 0.9rem;
+      font-size: 13px;
       font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-section {
+      border-top: 1px solid #1f2937;
+    }
+
+    .project-detail {
+      background: #111827;
+      border-left: 4px solid #38bdf8;
+      padding: 25px;
+      border-radius: 0 10px 10px 0;
+      margin-top: 25px;
+    }
+
+    .button-link {
+      display: inline-block;
+      background: #0284c7;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 7px;
+      padding: 11px 18px;
+      margin: 8px 8px 8px 0;
+    }
+
+    .button-link:hover {
+      background: #0369a1;
+    }
+
+    .note {
+      color: #94a3b8;
+      font-style: italic;
+      font-size: 0.95rem;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      border-top: 1px solid #1f2937;
-      color: #64748b;
+      padding: 35px 20px;
+      border-top: 1px solid #334155;
+      color: #94a3b8;
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
+      header {
+        padding: 70px 20px;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 8px;
+      nav {
+        position: static;
+      }
+
+      section {
+        padding: 50px 20px;
       }
     }
   </style>
@@ -146,107 +208,373 @@
 
 <header>
   <div class="hero">
-    <div class="tag">Computer Science • Cybersecurity • Software Development</div>
+    <div class="tag">
+      Computer Science • Cybersecurity • Software Development
+    </div>
 
     <h1>Ryan Eames</h1>
 
     <p class="subtitle">
-      Computer Science ePortfolio
+      Computer Science Capstone ePortfolio
     </p>
 
     <p class="intro">
-      Welcome to my professional ePortfolio. This portfolio represents my
-      growth throughout the Computer Science program and demonstrates my
-      experience in software engineering, algorithms and data structures,
-      databases, and secure software development.
+      Welcome to my professional portfolio. This website represents
+      my growth throughout the Bachelor of Science in Computer Science
+      program at Southern New Hampshire University. It highlights my
+      experience in software engineering, algorithms, database
+      development, and security-focused application design.
     </p>
   </div>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Enhancements</a>
-  <a href="#code-review">Code Review</a>
-  <a href="#assessment">Professional Self-Assessment</a>
+<nav aria-label="Portfolio navigation">
+  <a href="#assessment">Self-Assessment</a>
+  <a href="#overview">Sentinel</a>
+  <a href="#engineering">Software Engineering</a>
+  <a href="#algorithms">Algorithms</a>
+  <a href="#databases">Databases</a>
+  <a href="#artifacts">Project Files</a>
 </nav>
 
-<section id="about">
-  <h2>About Me</h2>
+<main>
+
+<section id="assessment">
+  <p class="label">Professional Introduction</p>
+  <h2>Professional Self-Assessment</h2>
 
   <p>
-    My work in computer science has given me experience designing,
-    developing, testing, and improving software across multiple platforms.
-    My professional interests are increasingly focused on cybersecurity,
-    information technology, and developing secure computing solutions that
-    help organizations protect their systems, data, and resources.
+    Throughout my Bachelor of Science in Computer Science program at
+    Southern New Hampshire University, I have developed a much better
+    understanding of what it takes to design, develop, and maintain
+    software. When I first started the program, my focus was primarily
+    on learning how to write code and understanding how different
+    programming languages worked. As I progressed through my courses,
+    I began to understand that computer science involves much more
+    than programming. It requires problem-solving, communication,
+    planning, testing, security awareness, and the ability to make
+    decisions that balance technical requirements with real-world needs.
+  </p>
+
+  <p>
+    My coursework introduced me to several areas of computer science,
+    including mobile application development, full-stack web
+    development, databases, software testing, networking, and
+    artificial intelligence. Through these experiences, I became
+    more comfortable working with Java, Python, JavaScript, SQL,
+    and other development tools. I also learned how important it is
+    to understand the overall structure of an application instead
+    of focusing only on individual pieces of code.
+  </p>
+
+  <p>
+    One project that helped me develop these skills was my full-stack
+    web application for Travlr Getaways. This project involved
+    building customer-facing pages, creating administrative
+    functionality using Angular, connecting the application to
+    MongoDB, and implementing authentication. It helped me
+    understand how frontend development, backend services, APIs,
+    databases, and security controls work together to create a
+    functional application. I also gained experience troubleshooting
+    integration problems and testing whether information was being
+    transferred correctly between components.
+  </p>
+
+  <p>
+    My coursework also helped me recognize the importance of
+    communicating technical information to different audiences.
+    Whether documenting a software project, explaining a design
+    decision, or describing an issue that needs to be resolved,
+    developers need to communicate clearly. Collaborative
+    environments depend on being able to explain problems,
+    consider feedback, and support decisions using evidence.
+    I have practiced these skills through project documentation,
+    course discussions, technical reflections, and explaining
+    the reasoning behind the improvements I make.
+  </p>
+
+  <p>
+    My experience with algorithms and data structures has taught
+    me to think more carefully about efficiency and how data is
+    processed. Rather than simply writing code that produces a
+    result, I have learned to consider how an algorithm performs,
+    how information should be organized, and whether a different
+    approach would be more appropriate. Database development has
+    reinforced these lessons by showing me the importance of
+    reliable data storage, relationships between records, and
+    maintaining data integrity.
+  </p>
+
+  <p>
+    Cybersecurity has become one of my strongest professional
+    interests. Throughout my program, I have learned that security
+    should be considered during the design process rather than
+    added only after development is complete. Authentication,
+    input validation, access control, secure data handling, and
+    the ability to review previous activity are all important
+    parts of building trustworthy applications. These interests
+    influenced the direction of my capstone project and my
+    decision to pursue a master's degree in Cybersecurity with
+    Information Technology Management.
+  </p>
+
+  <p>
+    My CS 499 capstone allowed me to bring together several
+    areas of my education into one project. I selected an
+    Android inventory application I previously developed
+    and enhanced it into Sentinel, an asset security management
+    application. This project demonstrates how software
+    engineering, algorithmic problem-solving, database
+    development, and security awareness can work together
+    to address a practical organizational need.
+  </p>
+
+  <p>
+    Completing this project strengthened my ability to work
+    through problems independently, troubleshoot unexpected
+    errors, and improve existing software without losing
+    important functionality. It also helped me recognize
+    areas where I want to continue growing, particularly
+    in cybersecurity practices, enterprise systems, and
+    information technology management. My goal is to
+    begin my career in information technology, continue
+    developing practical experience, and eventually move
+    into a more specialized cybersecurity role.
+  </p>
+
+  <p>
+    This portfolio represents the technical skills and
+    professional mindset I have developed throughout
+    my degree program. I believe the projects included
+    here demonstrate my ability to learn new technologies,
+    improve software solutions, evaluate technical
+    decisions, and approach development with security
+    and reliability in mind.
   </p>
 </section>
 
-<section id="projects">
-  <h2>Artifact Enhancements</h2>
+<section id="overview" class="project-section">
+  <p class="label">Featured Capstone Project</p>
+  <h2>Sentinel: Asset Security Management</h2>
 
   <p>
-    My capstone demonstrates growth across three major areas of computer
-    science through the enhancement of a previous software artifact.
+    Sentinel is an Android application developed in Java
+    with SQLite database integration. It began as a basic
+    inventory management application created during
+    CS 360 Mobile Architecture and Programming.
+  </p>
+
+  <p>
+    For my CS 499 capstone, I enhanced the original
+    application into a security-focused asset management
+    system. Sentinel allows users to register assets,
+    evaluate their security risk, document security
+    events, review historical risk assessments,
+    and examine audit records.
   </p>
 
   <div class="card-container">
 
     <div class="card">
-      <h3>Software Engineering & Design</h3>
+      <h3>Software Design</h3>
       <p>
-        Enhancement of an existing application through improved architecture,
-        security-focused functionality, usability, and professional software
-        engineering practices.
+        Expanded application functionality, improved
+        asset management, and added security-focused screens.
       </p>
-      <span class="coming-soon">Enhancement in Progress</span>
     </div>
 
     <div class="card">
-      <h3>Algorithms & Data Structures</h3>
+      <h3>Algorithms</h3>
       <p>
-        Implementation of advanced algorithmic logic and data structures to
-        analyze information, evaluate risk, and support intelligent
-        decision-making.
+        Developed a risk scoring system and prioritized
+        assets based on calculated security risk.
       </p>
-      <span class="coming-soon">Enhancement in Progress</span>
     </div>
 
     <div class="card">
       <h3>Databases</h3>
       <p>
-        Expansion of the application's data architecture to support more
-        complex, secure, and meaningful relationships between stored data.
+        Expanded SQLite to maintain risk history,
+        security events, and audit logs.
       </p>
-      <span class="coming-soon">Enhancement in Progress</span>
     </div>
 
   </div>
 </section>
 
-<section id="code-review">
-  <h2>Code Review</h2>
+<section id="engineering" class="project-section">
+  <p class="label">Enhancement One</p>
+  <h2>Software Design and Engineering</h2>
 
   <p>
-    This section will contain my capstone code review, including an analysis
-    of the original artifact, areas identified for improvement, and the
-    enhancements planned throughout the project.
+    My first enhancement focused on transforming the
+    original inventory application into a more structured
+    security asset management system. I expanded the
+    application with an Asset model, asset registration
+    features, security-focused navigation, and additional
+    screens that made the application more useful.
+  </p>
+
+  <div class="project-detail">
+    <h3>Skills Demonstrated</h3>
+    <ul>
+      <li>Java and Android application development</li>
+      <li>Object-oriented programming and data modeling</li>
+      <li>User interface development and navigation</li>
+      <li>Software troubleshooting and testing</li>
+      <li>Maintaining existing functionality during enhancements</li>
+    </ul>
+  </div>
+
+  <p>
+    This enhancement demonstrated my ability to evaluate
+    existing software, identify opportunities for
+    improvement, and implement changes that support
+    a more specialized purpose.
   </p>
 </section>
 
-<section id="assessment">
-  <h2>Professional Self-Assessment</h2>
+<section id="algorithms" class="project-section">
+  <p class="label">Enhancement Two</p>
+  <h2>Algorithms and Data Structures</h2>
 
   <p>
-    My professional self-assessment will reflect on my development throughout
-    the Computer Science program and demonstrate how my technical,
-    communication, problem-solving, database, software engineering, and
-    security skills have prepared me for the next stage of my career.
+    My second enhancement focused on developing the
+    Adaptive Asset Risk Engine. This feature evaluates
+    registered assets using security-related attributes
+    such as criticality, patch status, exposure,
+    and recorded incident counts.
+  </p>
+
+  <p>
+    Each asset receives a risk score and classification.
+    The dashboard prioritizes assets by calculated risk,
+    allowing users to identify which assets may require
+    attention first.
+  </p>
+
+  <div class="project-detail">
+    <h3>Skills Demonstrated</h3>
+    <ul>
+      <li>Algorithm design and implementation</li>
+      <li>Risk scoring and classification</li>
+      <li>Sorting assets by risk priority</li>
+      <li>Linear search for highest-risk identification</li>
+      <li>Evaluating algorithm efficiency and trade-offs</li>
+    </ul>
+  </div>
+
+  <p>
+    This enhancement showed me how algorithms can be
+    applied to practical cybersecurity problems
+    instead of only being used in classroom exercises.
   </p>
 </section>
+
+<section id="databases" class="project-section">
+  <p class="label">Enhancement Three</p>
+  <h2>Database Development</h2>
+
+  <p>
+    My final enhancement expanded the application's
+    SQLite database to support historical security
+    information. The original inventory application
+    primarily stored current asset information.
+    Sentinel now maintains additional records that
+    allow users to review previous activity.
+  </p>
+
+  <div class="project-detail">
+    <h3>Database Features</h3>
+    <ul>
+      <li>
+        Risk History: Records previous asset risk
+        assessments and classifications.
+      </li>
+      <li>
+        Security Events: Stores documented incidents
+        with event types, severity levels, and descriptions.
+      </li>
+      <li>
+        Audit Logs: Records asset creation, updates,
+        and deletions.
+      </li>
+      <li>
+        Audit Retention: Preserves audit records even
+        after an asset is deleted.
+      </li>
+    </ul>
+  </div>
+
+  <p>
+    I tested these features in the Android emulator.
+    Security events remained available after reopening
+    the screen, and audit logs successfully recorded
+    asset creation, modification, and deletion.
+    Audit records also remained accessible after
+    the associated asset was removed.
+  </p>
+
+  <p>
+    This enhancement strengthened my understanding
+    of relational database design, SQLite integration,
+    data persistence, and the importance of preserving
+    security-related information.
+  </p>
+</section>
+
+<section id="artifacts" class="project-section">
+  <p class="label">Supporting Evidence</p>
+  <h2>Project Files and Enhancement Narratives</h2>
+
+  <p>
+    The source code and written narratives supporting
+    this capstone will be linked here as the final
+    project materials are uploaded.
+  </p>
+
+  <div class="card-container">
+
+    <div class="card">
+      <h3>Original Application</h3>
+      <p>
+        The original CS 360 inventory application
+        before the Sentinel enhancements.
+      </p>
+      <p class="note">Original source files to be added.</p>
+    </div>
+
+    <div class="card">
+      <h3>Enhanced Sentinel</h3>
+      <p>
+        The enhanced Android Studio project containing
+        all three categories of improvements.
+      </p>
+      <p class="note">Enhanced source files to be added.</p>
+    </div>
+
+    <div class="card">
+      <h3>Enhancement Narratives</h3>
+      <p>
+        Written reflections explaining the enhancements,
+        technical decisions, challenges, and lessons learned.
+      </p>
+      <p class="note">Narrative documents to be added.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <p>Ryan Eames | Computer Science ePortfolio | 2026</p>
+  <p>Ryan Eames | CS 499 Computer Science ePortfolio | 2026</p>
+  <p>
+    <a href="https://github.com/RyanE2024"
+       style="color:#38bdf8;">
+      GitHub Profile
+    </a>
+  </p>
 </footer>
 
 </body>
